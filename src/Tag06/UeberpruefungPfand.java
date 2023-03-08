@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class UeberpruefungPfandMitMethod {
+public class UeberpruefungPfand {
 
 	public static void main(String[] args) {
         /*Schreibe ein Programm das …
@@ -18,7 +18,7 @@ public class UeberpruefungPfandMitMethod {
 
         try {
             Scanner input = new Scanner(System.in);
-            System.out.print("Bitte Pfadadresse eingeben: ");
+            System.out.print("Bitte Pfadad eingeben: ");
             pfandAdresse = input.nextLine();
 
         }catch (StringIndexOutOfBoundsException sib){
