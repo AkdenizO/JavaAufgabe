@@ -7,10 +7,20 @@ public class iterativ_rekursive {
     public static void main(String[] args) {
 
         int[] zahlen = {1, 2, 3, 4, 5};
-        swap(zahlen);
 
+        swap(zahlen);
+        System.out.print("Iterative: ");
         for (int wert: zahlen) {
             System.out.print(wert + " ");
+        }
+        System.out.println();
+
+//        int[] array = {6, 7, 8, 9, 10};
+
+        swapRekursive(zahlen, 0);
+        System.out.print("rekursive: ");
+        for (int wert2: zahlen) {
+            System.out.print(wert2 + " ");
         }
 
     }
@@ -27,5 +37,23 @@ public class iterativ_rekursive {
 
         }
         return zahlen;
+    }
+    public static int[] swapRekursive(int[] zahlen, int j){
+
+        int zahl = 0;
+
+        if (j <= zahlen.length / 2) {
+            int i = zahlen.length - j - 1;
+            zahl = zahlen[j];
+            zahlen[j] = zahlen[i];
+            zahlen[i] = zahl;
+
+
+            swapRekursive(zahlen, j + 1);
+
+        }
+
+        return zahlen;
+
     }
 }
