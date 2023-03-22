@@ -16,43 +16,33 @@ public class iterativ_rekursive {
         System.out.println();
 
 //        int[] array = {6, 7, 8, 9, 10};
-
         swapRekursive(zahlen, 0);
-        System.out.print("rekursive: ");
+        System.out.print("Rekursive: ");
         for (int wert2: zahlen) {
             System.out.print(wert2 + " ");
         }
-
     }
     public static int[] swap(int[] zahlen) {
-
-        int zahl = 0;
-
         // der erste Wert geht an das Ende und der letze Wert geht an die erste Reihe.
         // daher muss i auf die Hälfte der Zahl steigen.
-        for (int i = zahlen.length-1, j = 0; i >= zahlen.length/2; i--, j++) { //  (zahlen.length/2)+1 =
-            zahl = zahlen[j]; // ich speichere hier den Wert von index j (erste, zweite, dritte...)
+        for (int i = zahlen.length-1, j = 0; i >= zahlen.length/2; i--, j++) {
+            int zahl = zahlen[j]; // ich hole und spreichere hier den Wert von index j (erste, zweite, dritte...)
             zahlen[j] = zahlen[i]; // die letze Zahl geht die erste Reihe
-            zahlen[i] = zahl; // die erste Zahl geht die letzte Reihe
-
+            zahlen[i] = zahl; // die erste Zahl geht in die letzte Reihe
         }
+
         return zahlen;
     }
+    // i = LetzteIndex... j = ErsteIndex, ZweiteIndex...
     public static int[] swapRekursive(int[] zahlen, int j){
-
-        int zahl = 0;
-
         if (j <= zahlen.length / 2) {
-            int i = zahlen.length - j - 1;
-            zahl = zahlen[j];
+            int i = zahlen.length - j - 1;      // Index (erste, zweite, dritte...)
+            int zahl = zahlen[j];               // ich hole hier die Werte vom Zahlen
             zahlen[j] = zahlen[i];
             zahlen[i] = zahl;
 
-
-            swapRekursive(zahlen, j + 1);
-
+            swapRekursive(zahlen, j +1);
         }
-
         return zahlen;
 
     }

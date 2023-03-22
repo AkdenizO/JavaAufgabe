@@ -1,4 +1,4 @@
-package Tag09;
+package Tag09.Vormittagsaufgebe;
 
 public class Mwst {
 
